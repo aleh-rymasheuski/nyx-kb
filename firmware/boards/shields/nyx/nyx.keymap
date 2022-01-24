@@ -31,48 +31,48 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // | `       | 1    | 2    | 3      | 4       | 5       | -          | =              | 6          | 7       | 8       | 9     | 0      | -       |
-            // | [       | Q    | W    | E      | R       | T       | //         | \\             | Y          | U       | I       | O     | P      | ]       |
-            // | (       | A    | S    | D      | F       | G       | ESC        | TAB            | H          | J       | K       | L     | ;      | )       |
-            // | LSHIFT  | Z    | X    | C      | V       | B       | DEL        | BSPC           | N          | M       | ,       | .     | '      | RSHIFT  |
-            // |         |      |      | LGUI   | FN      | LCTL    | LALT       | SPC / RCTL     | RET        | RCTL    | RALT    |       |        |         |
+            // | ESC     | 1    | 2    | 3      | 4      | 5       | -       | =       | 6     | 7      | 8       | 9     | 0      | BSPC    |
+            // | TAB     | Q    | W    | E      | R      | T       | //      | \\      | Y     | U      | I       | O     | P      | DEL     |
+            // | LCTRL   | A    | S    | D      | F      | G       | (       | )       | H     | J      | K       | L     | ;      | '       |
+            // | LSHIFT  | Z    | X    | C      | V      | B       | [       | ]       | N     | M      | ,       | .     | //     | RSHIFT  |
+            // |         |      |      | LGUI   | LALT   | SPACE   | FN      | FN      | RET   | RALT   | RCTRL   |       |        |         |
             bindings = <
-                &kp GRAVE &kp N1 &kp N2 &kp N3   &kp N4    &kp N5    &kp MINUS    &kp EQUAL        &kp N6       &kp N7    &kp N8    &kp N9  &kp N0   &kp MINUS
-                &kp LBKT  &kp Q  &kp W  &kp E    &kp R     &kp T     &kp FSLH     &kp BSLH         &kp Y        &kp U     &kp I     &kp O   &kp P    &kp RBKT
-                &kp LPAR  &kp A  &kp S  &kp D    &kp F     &kp G     &kp ESC      &kp TAB          &kp H        &kp J     &kp K     &kp L   &kp SEMI &kp RPAR
-                &kp LSHFT &kp Z  &kp X  &kp C    &kp V     &kp B     &kp DEL      &kp BSPC         &kp N        &kp M     &kp COMMA &kp DOT &kp APOS &kp RSHFT
-                                        &kp LGUI &mo LOWER &kp LCTRL &mt LALT RET &bmt RCTRL SPACE &mt RALT RET &mo LOWER &kp RGUI
+                &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5    &kp MINUS &kp EQUAL &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp BSPC
+                &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T     &kp FSLH  &kp BSLH  &kp Y   &kp U    &kp I     &kp O   &kp P    &kp DEL
+                &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G     &kp LPAR  &kp RPAR  &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp APOS
+                &kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B     &kp LBKT  &kp RBKT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                                        &kp LGUI &kp LALT &kp SPACE &mo LOWER &mo LOWER &kp RET &kp RALT &kp RCTRL
             >;
         };
 
         lower_layer {
-            // |      | F1   | F2     | F3      | F4     | F5  |      |      | F6      | F7     | F8     | F9      | F10   | F11   |
-            // |      |      |        | PG UP   |        |     |      |      |         |        | ↑      |         |       | F12   |
-            // |      |      | HOME   | PG DOWN | END    |     |      |      |         | ←      | ↓      | →       |       |       |
-            // |      |      |        |         |        |     |      |      |         |        |        |         |       |       |
-            // |      |      |        |         |        |     |      |      | SPC     |        |        |         |       |       |
+            // | `       | F1   | F2     | F3     | F4      | F5     |      |      | F6   | F7     | F8     | F9      | F10     | F11   |
+            // |         |      | [      | ]      |         |        |      |      |      | HOME   | ↑      | END     | INS     | F12   |
+            // |         |      | (      | )      | _       |        |      |      |      | ←      | ↓      | →       | PG UP   |       |
+            // |         |      | {      | }      |         |        |      |      |      |        |        |         | PG DN   |       |
+            // |         |      |        |        |         | LGUI   |      |      |      |        |        |         |         |       |
             bindings = <
-                &trans &kp F1 &kp F2   &kp F3    &kp F4  &kp F5 &trans &trans &kp F6    &kp F7   &kp F8   &kp F9    &kp F10 &kp F11
-                &trans &trans &trans   &kp PG_UP &trans  &trans &trans &trans &trans    &trans   &kp UP   &trans    &trans  &kp F12
-                &trans &trans &kp HOME &kp PG_DN &kp END &trans &trans &trans &trans    &kp LEFT &kp DOWN &kp RIGHT &trans  &trans
-                &trans &trans &trans   &trans    &trans  &trans &trans &trans &trans    &trans   &trans   &trans    &trans  &trans
-                                                 &trans  &trans &trans &trans &kp SPACE &trans   &trans   &trans
+                &kp GRAVE &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &trans &trans &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
+                &trans    &trans &kp LBKT &kp RBKT &trans    &trans   &trans &trans &trans &kp HOME &kp UP   &kp END   &kp INS   &kp F12
+                &trans    &trans &kp LPAR &kp RPAR &kp UNDER &trans   &trans &trans &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &trans
+                &trans    &trans &kp LBRC &kp RBRC &trans    &trans   &trans &trans &trans &trans   &trans   &trans    &kp PG_DN &trans
+                                          &trans   &trans    &kp LGUI &trans &trans &trans &trans   &trans
 
             >;
         };
 
         upper_layer {
-            // | BT_CLR   | BT_SEL 0   | BT_SEL 1   | BT_SEL 2   | BT_SEL 3   | BT_SEL 4   |      |      |      |      |      |      |      |      |
-            // |          |            |            |            |            |            |      |      |      |      |      |      |      |      |
-            // |          |            |            |            |            |            |      |      |      |      |      |      |      |      |
-            // |          |            |            |            |            |            |      |      |      |      |      |      |      |      |
-            // |          |            |            |            |            |            |      |      |      |      |      |      |      |      |
+            // | BT_CLR     | BT_SEL 0   | BT_SEL 1   | BT_SEL 2   | BT_SEL 3   | BT_SEL 4   |      |      |      |      |      |      |      |      |
+            // | OUT_USB    | OUT_BLE    |            |            |            |            |      |      |      |      |      |      |      |      |
+            // |            |            |            |            |            |            |      |      |      |      |      |      |      |      |
+            // |            |            |            |            |            |            |      |      |      |      |      |      |      |      |
+            // | bootloader |            |            |            |            |            |      |      |      |      |      |      |      |      |
             bindings = <
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
-                                                     &trans       &trans       &trans       &trans &trans &trans &trans &trans
+                &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &trans
+                &out OUT_USB &out OUT_BLE &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans       &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
+                &bootloader  &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
+                                                       &trans       &trans       &trans       &trans &trans &trans &trans &trans
 
             >;
         };
@@ -82,12 +82,12 @@
         compatible = "zmk,combos";
         combo_upperl {
             timeout-ms = <50>;
-            key-positions = <56 57>;
+            key-positions = <56 57 58 59>;
             bindings = <&mo UPPER>;
         };
         combo_upperr {
             timeout-ms = <50>;
-            key-positions = <62 63>;
+            key-positions = <60 61 62 63>;
             bindings = <&mo UPPER>;
         };
     };
