@@ -31,13 +31,13 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // | ESC     | 1    | 2    | 3      | 4      | 5       | -       | =       | 6     | 7      | 8       | 9     | 0      | BSPC    |
+            // | `       | 1    | 2    | 3      | 4      | 5       | -       | =       | 6     | 7      | 8       | 9     | 0      | BSPC    |
             // | TAB     | Q    | W    | E      | R      | T       | //      | \\      | Y     | U      | I       | O     | P      | DEL     |
             // | LCTRL   | A    | S    | D      | F      | G       | (       | )       | H     | J      | K       | L     | ;      | '       |
             // | LSHIFT  | Z    | X    | C      | V      | B       | [       | ]       | N     | M      | ,       | .     | //     | RSHIFT  |
             // |         |      |      | LGUI   | LALT   | SPACE   | FN      | FN      | RET   | RALT   | RCTRL   |       |        |         |
             bindings = <
-                &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5    &kp MINUS &kp EQUAL &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp BSPC
+                &kp GRAVE &kp N1 &kp N2 &kp N3   &kp N4   &kp N5    &kp MINUS &kp EQUAL &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp BSPC
                 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T     &kp FSLH  &kp BSLH  &kp Y   &kp U    &kp I     &kp O   &kp P    &kp DEL
                 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G     &kp LPAR  &kp RPAR  &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp APOS
                 &kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B     &kp LBKT  &kp RBKT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
@@ -46,17 +46,17 @@
         };
 
         lower_layer {
-            // | `       | F1   | F2     | F3     | F4      | F5     |      |      | F6   | F7     | F8     | F9      | F10     | F11   |
-            // |         |      | [      | ]      | -       |        |      |      |      | HOME   | ↑      | END     | INS     | F12   |
-            // |         |      | (      | )      | _       |        |      |      |      | ←      | ↓      | →       | PG UP   |       |
-            // |         |      | {      | }      | =       |        |      |      |      |        |        |         | PG DN   |       |
-            // |         |      |        |        |         | LGUI   |      |      |      |        |        |         |         |       |
+            // | ESC   | F1   | F2     | F3     | F4      | F5     |      |      | F6   | F7     | F8     | F9      | F10     | F11   |
+            // |       |      | [      | ]      | -       |        |      |      |      | HOME   | ↑      | END     | INS     | F12   |
+            // |       |      | (      | )      | _       |        |      |      |      | ←      | ↓      | →       | PG UP   |       |
+            // |       |      | {      | }      | =       |        |      |      |      |        |        |         | PG DN   |       |
+            // |       |      |        |        |         | LGUI   |      |      |      |        |        |         |         |       |
             bindings = <
-                &kp GRAVE &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &trans &trans &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
-                &trans    &trans &kp LBKT &kp RBKT &kp MINUS &trans   &trans &trans &trans &kp HOME &kp UP   &kp END   &kp INS   &kp F12
-                &trans    &trans &kp LPAR &kp RPAR &kp UNDER &trans   &trans &trans &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &trans
-                &trans    &trans &kp LBRC &kp RBRC &kp EQUAL &trans   &trans &trans &trans &trans   &trans   &trans    &kp PG_DN &trans
-                                          &trans   &trans    &kp LGUI &trans &trans &trans &trans   &trans
+                &kp ESC &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &trans &trans &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
+                &trans  &trans &kp LBKT &kp RBKT &kp MINUS &trans   &trans &trans &trans &kp HOME &kp UP   &kp END   &kp INS   &kp F12
+                &trans  &trans &kp LPAR &kp RPAR &kp UNDER &trans   &trans &trans &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &trans
+                &trans  &trans &kp LBRC &kp RBRC &kp EQUAL &trans   &trans &trans &trans &trans   &trans   &trans    &kp PG_DN &trans
+                                        &trans   &trans    &kp LGUI &trans &trans &trans &trans   &trans
 
             >;
         };
