@@ -10,9 +10,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define DEFAULT 0
-#define LOWER   1
-#define UPPER   2
+#define QWERTY 0
+#define NAV    1
+#define MNG    2
 
 / {
     behaviors {
@@ -30,22 +30,22 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        qwerty_layer {
             // | `       | 1    | 2    | 3      | 4      | 5       | -       | =       | 6     | 7      | 8       | 9     | 0      | BSPC    |
             // | TAB     | Q    | W    | E      | R      | T       | //      | \\      | Y     | U      | I       | O     | P      | DEL     |
             // | LCTRL   | A    | S    | D      | F      | G       | (       | )       | H     | J      | K       | L     | ;      | '       |
             // | LSHIFT  | Z    | X    | C      | V      | B       | [       | ]       | N     | M      | ,       | .     | //     | RSHIFT  |
-            // |         |      |      | LGUI   | LALT   | SPACE   | FN      | FN      | RET   | RALT   | RCTRL   |       |        |         |
+            // |         |      |      | LGUI   | LALT   | SPACE   | NAV     | NAV     | RET   | RALT   | RCTRL   |       |        |         |
             bindings = <
                 &kp GRAVE &kp N1 &kp N2 &kp N3   &kp N4   &kp N5    &kp MINUS &kp EQUAL &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp BSPC
                 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T     &kp FSLH  &kp BSLH  &kp Y   &kp U    &kp I     &kp O   &kp P    &kp DEL
                 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G     &kp LPAR  &kp RPAR  &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp APOS
                 &kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B     &kp LBKT  &kp RBKT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                        &kp LGUI &kp LALT &kp SPACE &mo LOWER &mo LOWER &kp RET &kp RALT &kp RCTRL
+                                        &kp LGUI &kp LALT &kp SPACE &mo NAV   &mo NAV   &kp RET &kp RALT &kp RCTRL
             >;
         };
 
-        lower_layer {
+        nav_layer {
             // | ESC   | F1   | F2     | F3     | F4      | F5     |      |      | F6   | F7     | F8     | F9      | F10     | F11   |
             // |       |      | [      | ]      | -       |        |      |      |      | HOME   | ↑      | END     | INS     | F12   |
             // |       |      | (      | )      | _       |        |      |      |      | ←      | ↓      | →       | PG UP   |       |
@@ -61,7 +61,7 @@
             >;
         };
 
-        upper_layer {
+        mng_layer {
             // | BT_CLR     | BT_SEL 0   | BT_SEL 1   | BT_SEL 2   | BT_SEL 3   | BT_SEL 4   |     |     |     |     |     |     |     |     |
             // | OUT_USB    | OUT_BLE    |            |            |            |            |     |     |     |     |     |     |     |     |
             // |            |            |            |            |            |            |     |     |     |     |     |     |     |     |
@@ -80,15 +80,15 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_upperl {
+        combo_mngl {
             timeout-ms = <50>;
             key-positions = <56 57 58 59>;
-            bindings = <&mo UPPER>;
+            bindings = <&mo MNG>;
         };
-        combo_upperr {
+        combo_mngr {
             timeout-ms = <50>;
             key-positions = <60 61 62 63>;
-            bindings = <&mo UPPER>;
+            bindings = <&mo MNG>;
         };
     };
 };
