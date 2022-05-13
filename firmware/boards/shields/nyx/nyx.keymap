@@ -68,10 +68,10 @@
             // |       |      | {      | }      | =       |        |      |      |      |        |        |         | PG DN   |       |
             // |       |      |        |        |         | LGUI   |      |      |      |        |        |         |         |       |
             bindings = <
-                &kp ESC &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &trans &trans &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
-                &trans  &trans &kp LBKT &kp RBKT &kp MINUS &trans   &trans &trans &trans &kp HOME &kp UP   &kp END   &kp INS   &kp F12
-                &trans  &trans &kp LPAR &kp RPAR &kp UNDER &trans   &trans &trans &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &trans
-                &trans  &trans &kp LBRC &kp RBRC &kp EQUAL &trans   &trans &trans &trans &trans   &trans   &trans    &kp PG_DN &trans
+                &kp ESC &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &none  &none  &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
+                &trans  &none  &kp LBKT &kp RBKT &kp MINUS &none    &none  &none  &none  &kp HOME &kp UP   &kp END   &kp INS   &kp F12
+                &trans  &none  &kp LPAR &kp RPAR &kp UNDER &none    &none  &none  &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &none
+                &trans  &none  &kp LBRC &kp RBRC &kp EQUAL &none    &none  &none  &none  &none    &none    &none     &kp PG_DN &trans
                                         &trans   &trans    &kp LGUI &trans &trans &trans &trans   &trans
 
             >;
