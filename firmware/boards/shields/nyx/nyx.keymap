@@ -62,17 +62,17 @@
         };
 
         nav_layer {
-            // | ESC   | F1   | F2     | F3     | F4      | F5     |      |      | F6   | F7     | F8     | F9      | F10     | F11   |
-            // |       |      | [      | ]      | -       |        |      |      |      | HOME   | ↑      | END     | INS     | F12   |
-            // |       |      | (      | )      | _       |        |      |      |      | ←      | ↓      | →       | PG UP   |       |
-            // |       |      | {      | }      | =       |        |      |      |      |        |        |         | PG DN   |       |
-            // |       |      |        |        |         | LGUI   |      |      |      |        |        |         |         |       |
+            // | ESC   | F1   | F2     | F3     | F4      | F5     |      | F20 (MIC)  | F6   | F7     | F8     | F9      | F10     | F11   |
+            // |       |      | [      | ]      | -       |        |      | MUTE       |      | HOME   | ↑      | END     | INS     | F12   |
+            // |       |      | (      | )      | _       |        |      | VOL+       |      | ←      | ↓      | →       | PG UP   |       |
+            // |       |      | {      | }      | =       |        |      | VOL-       |      |        |        |         | PG DN   |       |
+            // |       |      |        |        |         | LGUI   |      |            |      |        |        |         |         |       |
             bindings = <
-                &kp ESC &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &none  &none  &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
-                &trans  &none  &kp LBKT &kp RBKT &kp MINUS &none    &none  &none  &none  &kp HOME &kp UP   &kp END   &kp INS   &kp F12
-                &trans  &none  &kp LPAR &kp RPAR &kp UNDER &none    &none  &none  &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &none
-                &trans  &none  &kp LBRC &kp RBRC &kp EQUAL &none    &none  &none  &none  &none    &none    &none     &kp PG_DN &trans
-                                        &trans   &trans    &kp LGUI &trans &trans &trans &trans   &trans
+                &kp ESC &kp F1 &kp F2   &kp F3   &kp F4    &kp F5   &none  &kp F20      &kp F6 &kp F7   &kp F8   &kp F9    &kp F10   &kp F11
+                &trans  &none  &kp LBKT &kp RBKT &kp MINUS &none    &none  &kp K_MUTE   &none  &kp HOME &kp UP   &kp END   &kp INS   &kp F12
+                &trans  &none  &kp LPAR &kp RPAR &kp UNDER &none    &none  &kp K_VOL_UP &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &none
+                &trans  &none  &kp LBRC &kp RBRC &kp EQUAL &none    &none  &kp K_VOL_DN &none  &none    &none    &none     &kp PG_DN &trans
+                                        &trans   &trans    &kp LGUI &trans &trans       &trans &trans   &trans
 
             >;
         };
