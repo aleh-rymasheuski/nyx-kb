@@ -18,12 +18,25 @@
 / {
     behaviors {
         mttp: mod_tap_tap_preferred {
-			compatible = "zmk,behavior-hold-tap";
-			label = "MOD_TAP";
-			#binding-cells = <2>;
-			flavor = "tap-preferred";
-			tapping-term-ms = <200>;
-			bindings = <&kp>, <&kp>;
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "MOD_TAP";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <200>;
+                        bindings = <&kp>, <&kp>;
+        };
+        prog_caps: prog_caps {
+                        compatible = "zmk,behavior-caps-word";
+                        label = "PROG_CAPS";
+                        #binding-cells = <0>;
+                        continue-list = <UNDERSCORE>, <BACKSPACE>;
+        };
+        tdcw: tap_dance_prog_caps {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_PROG_CAPS";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <300>;
+                        bindings = <&kp LSHFT>, <&prog_caps>;
         };
     };
     keymap {
@@ -34,13 +47,13 @@
             // | TAB     | Q    | W    | E      | R       | T               | //      | \\      | Y     | U      | I       | O     | P      | DEL     |
             // | LCTRL   | A    | S    | D      | F       | G               | (       | )       | H     | J      | K       | L     | ;      | '       |
             // | LSHIFT  | Z    | X    | C      | V       | B               | [       | ]       | N     | M      | ,       | .     | //     | RSHIFT  |
-            // |         |      |      | LGUI   | LSHIFT  | LCTRL/SPACE     | NAV     | NAV     | RET   | RALT   | LALT    |       |        |         |
+            // |         |      |      | LGUI   | LSHIFT* | LCTRL/SPACE     | NAV     | NAV     | RET   | RALT   | LALT    |       |        |         |
             bindings = <
                 &kp GRAVE &kp N1 &kp N2 &kp N3   &kp N4    &kp N5            &kp MINUS &kp EQUAL &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp BSPC
                 &kp TAB   &kp Q  &kp W  &kp E    &kp R     &kp T             &kp FSLH  &kp BSLH  &kp Y   &kp U    &kp I     &kp O   &kp P    &kp DEL
                 &kp LCTRL &kp A  &kp S  &kp D    &kp F     &kp G             &kp LPAR  &kp RPAR  &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp APOS
                 &kp LSHFT &kp Z  &kp X  &kp C    &kp V     &kp B             &kp LBKT  &kp RBKT  &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                        &kp LGUI &kp LSHFT &mttp LCTRL SPACE &mo NAV   &mo NAV   &kp RET &kp RALT &kp LALT
+                                        &kp LGUI &tdcw     &mttp LCTRL SPACE &mo NAV   &mo NAV   &kp RET &kp RALT &kp LALT
             >;
         };
 
@@ -49,13 +62,13 @@
             // | TAB     | Q    | W    | F      | P       | B               | //      | \\      | J     | L      | U       | Y     | ;      | DEL     |
             // | LCTRL   | A    | R    | S      | T       | G               | (       | )       | M     | N      | E       | I     | O      | '       |
             // | LSHIFT  | Z    | X    | C      | D       | V               | [       | ]       | K     | H      | ,       | .     | //     | RSHIFT  |
-            // |         |      |      | LGUI   | LSHIFT  | LCTRL/SPACE     | NAV     | NAV     | RET   | RALT   | LALT    |       |        |         |
+            // |         |      |      | LGUI   | LSHIFT* | LCTRL/SPACE     | NAV     | NAV     | RET   | RALT   | LALT    |       |        |         |
             bindings = <
                 &kp GRAVE &kp N1 &kp N2 &kp N3   &kp N4    &kp N5            &kp MINUS &kp EQUAL &kp N6  &kp N7   &kp N8    &kp N9  &kp N0   &kp BSPC
                 &kp TAB   &kp Q  &kp W  &kp F    &kp P     &kp B             &kp FSLH  &kp BSLH  &kp J   &kp L    &kp U     &kp Y   &kp SEMI &kp DEL
                 &kp LCTRL &kp A  &kp R  &kp S    &kp T     &kp G             &kp LPAR  &kp RPAR  &kp M   &kp N    &kp E     &kp I   &kp O    &kp APOS
                 &kp LSHFT &kp Z  &kp X  &kp C    &kp D     &kp V             &kp LBKT  &kp RBKT  &kp K   &kp H    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                                        &kp LGUI &kp LSHFT &mttp LCTRL SPACE &mo NAV   &mo NAV   &kp RET &kp RALT &kp LALT
+                                        &kp LGUI &tdcw     &mttp LCTRL SPACE &mo NAV   &mo NAV   &kp RET &kp RALT &kp LALT
             >;
         };
 
