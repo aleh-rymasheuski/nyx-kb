@@ -107,6 +107,11 @@
 
     combos {
         compatible = "zmk,combos";
+        combo_nav {
+            timeout-ms = <200>;
+            key-positions = <59 60>;
+            bindings = <&tog NAV>;
+        };
         combo_mngl {
             timeout-ms = <50>;
             key-positions = <56 57 58 59>;
