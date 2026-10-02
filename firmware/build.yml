@@ -1,2 +1,6 @@
 board: [ "nice_nano_v2" ]
 shield: [ "nyx_left", "nyx_right", "settings_reset" ]
+include:
+  - board: nice_nano_v2
+    shield: nyx_left
+    snippet: zmk-usb-logging
